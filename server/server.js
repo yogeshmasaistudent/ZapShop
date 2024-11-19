@@ -6,11 +6,12 @@ import ConnectDB from "./Config/db.js";
 import UserRouter from "./Routes/user.router.js";
 dotenv.config();
 const app = express();
+import bodyParser from "body-parser";
 
 // Middlewares
 app.use(express.json());
 app.use(cors());
-
+app.use(bodyParser.json())
 
 
 // Routes
