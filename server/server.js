@@ -7,6 +7,9 @@ import UserRouter from "./Routes/user.router.js";
 dotenv.config();
 const app = express();
 import bodyParser from "body-parser";
+import ProductRouter from "./Routes/product.router.js";
+import AddressRouter from "./Routes/address.router.js";
+import CartRouter from "./Routes/cart.router.js";
 
 // Middlewares
 app.use(express.json());
@@ -15,8 +18,16 @@ app.use(bodyParser.json())
 
 
 // Routes
-
 app.use("/users",UserRouter)
+
+app.use("/products",ProductRouter)
+
+app.use("/address",AddressRouter)
+
+// Add To Cart 
+app.use("/cart",CartRouter)
+
+
 
 
 // app
